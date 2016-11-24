@@ -1,10 +1,10 @@
 ---
 layout: post
-title: You're up and running!
+title: RC3 CTF 2016 Writeups
+published: false
 ---
 
-Next you can update your site name, avatar and other options using the _config.yml file in the root of your repository (shown below).
+Last weekend [RIT Competitive Cybersecurity Club](https://rc3.club/) hosted RC3 CTF. All in all it was a 
+blast and a very stimulating learning experience. Below are the writeups for some of the challenges that I solved.
 
-![_config.yml]({{ site.baseurl }}/images/config.png)
-
-The easiest way to make your first post is to edit this one. Go into /_posts/ and update the Hello World markdown file. For more instructions head over to the [Jekyll Now repository](https://github.com/barryclark/jekyll-now) on GitHub.
+#Salad 
