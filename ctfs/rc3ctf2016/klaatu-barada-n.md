@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Klaatu Barada N...
+title: "RC3 CTF 2016 Writeup: Klaatu Barada N..."
 ---
 
 > 300 points
