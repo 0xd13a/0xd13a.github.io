@@ -6,14 +6,17 @@ title: RC3 CTF 2016 Writeups
 Last weekend [RIT Competitive Cybersecurity Club](https://rc3.club/) hosted [RC3 CTF](https://ctftime.org/event/389). All in all it was a 
 great competition and a very stimulating learning experience. Below are the writeups for some of the challenges that I solved.
 
-**[Salad](#salad)**
+> 100 points
+>
+> “The fault, dear Brutus, is not in our stars, but in ourselves.” (I.ii.141) Julius Caesar in William Shakespeare’s Julius Caesar
+>
+> Cipher Text: 7sj-ighm-742q3w4t
 
-**[Some Pang](#some-pang)**
+Right off the bat there are a lot of clues to how the flag is encoded. The Caesar quote and challenge name both point to [Caesar cipher](https://en.wikipedia.org/wiki/Caesar_cipher). Also we know that the flags are in format ```RC3-2016-xxx```, so the first two sections of the encoded flag are likely ```RC3-2016-```.
 
-**[Bridge of Cyber](#bridge-of-cyber)**
+Let's try substituting letters and numbers from that section into a simple encoding table:
 
-**[Klaatu Barada N...](#klaatu-barada-n)**
-
-**[Graphic Design](#graphic-design)**
-
-**[Breaking News](#breaking-news)**
+```
+0123456789 ABCDEFGHIJKLMNOPQRSTUVWXYZ
+ghij  m      s              7
+```
