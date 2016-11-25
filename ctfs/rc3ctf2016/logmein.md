@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Logmein
+title: "RC3 CTF 2016 Writeup: Logmein"
 ---
 
 > 100 points
