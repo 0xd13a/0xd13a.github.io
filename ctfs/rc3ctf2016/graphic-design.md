@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Graphic Design
+title: "RC3 CTF 2016 Writeup: Graphic Design"
 ---
 
 > 200 points
