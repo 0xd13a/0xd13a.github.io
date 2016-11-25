@@ -15,7 +15,7 @@ This challenge was offline for quite a long time, but eventually they fixed it w
 
 The drop down list on the front page shows a list of video clips of a dog barking to various tunes. Closer examination showed that a ```bork``` parameter contains a name of a text file.
 
-When we ssend a POST request with an empty ```bork``` parameter we get the following error in the response:
+When we send a POST request with an empty ```bork``` parameter we get the following error in the response:
 
 ```
 <iframe width="854" height="480" src="cat: borks/: Is a directory?autoplay=1&loop=1" frameborder="0"></iframe>
