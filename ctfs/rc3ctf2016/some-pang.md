@@ -55,6 +55,6 @@ root@kali:~/rc3# file out.dat
 out.dat: JPEG image data, JFIF standard 1.01, aspect ratio, density 72x72, segment length 16, Exif Standard: [TIFF image data, big-endian, direntries=2, orientation=upper-left], baseline, precision 8, 720x449, frames 3
 ```
 
-When we rename and open it we see that it contains the flag: ```RC3-2016-PANG-ME-LIKE-ONE-OF-YOUR-FRENCH-GORILLAZ```
+When we rename and open it we find that it contains the flag: ```RC3-2016-PANG-ME-LIKE-ONE-OF-YOUR-FRENCH-GORILLAZ```
 
 ![Solution]({{ site.baseurl }}/ctfs/rc3ctf2016/somepang/out.jpg)
