@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Bork Bork
+title: "RC3 CTF 2016 Writeup: Bork Bork"
 ---
 
 > 300 points
