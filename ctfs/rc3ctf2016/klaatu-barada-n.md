@@ -3,6 +3,23 @@ layout: page
 title: RC3 CTF 2016 Writeup: Klaatu Barada N...
 ---
 
+> 300 points
+>
+> Whilst fighting of hordes of Deadites, Ash seems to have forgotten something. Help Ash remember the words, because he'd rather be in Jacksonville.
+>
+> nc ctf.rc3.club 6050
+>
+> author:orkulus
+
+"Klaatu Barada Nikto", as it turns out, is a phrase from both [The Day the Earth Stood Still](http://www.imdb.com/title/tt0043456/) and [Army of Darkness](http://www.imdb.com/title/tt0106308/) (CTFs teach you all kinds of trivia :) ). 
+
+The application that we connect to returns a bunch of base64-encoded strings and immediately disconnects. It does not seem to accept any input, so let's proceed on assumption that the flag is encoded in the output. 
+
+The application output changes all the time both in content and in the number of lines returned. However all lines seem to be quotes from "Army of Darkness", and there is a limited set of them. We also notice that the most frequently returned number of lines is 136, which **divides by 8**. So there is a possibility that each line encodes a single bit of data, and 8 lines represent a single character from the flag. Let's verify that.
+
+We capture a sample output, decode and save it into a local file [nikto.txt]({{ site.baseurl }}/ctfs/rc3ctf2016/klaatu-barada-n/nikto.txt). Let's massage it to get a list of unique quotes to work with:
+
+```
 root@kali:~/rc3# cat nikto.txt | uniq | sort > nikto_table.txt
 ```
 
