@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Some Pang
+title: "RC3 CTF 2016 Writeup: Some Pang"
 ---
 
 > 50 points
