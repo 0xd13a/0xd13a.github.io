@@ -38,7 +38,7 @@ root@kali:~/rc3# file /mnt/dtrump/secretfiles/Workbook1.xlsx.gpg
 /mnt/dtrump/secretfiles/Workbook1.xlsx.gpg: PGP RSA encrypted session key - keyid: 1246B951 2DB12CE2 RSA (Encrypt or Sign) 1024b .
 ```
 
-Based on ```file``` output and the extension, the Excel Workbook is encrypted with [gpg](https://www.gnupg.org/gph/de/manual/r1023.html). Luckily the folder with original encryption key is available on the image (```.gnupg```). Let's copy it to out home folder and decrypt the Excel file:
+Based on ```file``` output and the extension, the Excel Workbook is encrypted with [gpg](https://www.gnupg.org/gph/de/manual/r1023.html). Luckily the folder with original encryption key (```.gnupg```) is part of the image. Let's copy it to our home folder and decrypt the Excel file:
 
 ```
 root@kali:~/rc3# gpg -o Workbook1.xlsx -d /mnt/dtrump/secretfiles/Workbook1.xlsx.gpg
@@ -46,6 +46,6 @@ gpg: encrypted with 1024-bit RSA key, ID 51B94612E22CB12D, created 2016-11-18
       "ThugG (lolz) <nope@gmail.com>"
 ```
 
-When we open the decrypted file in Excel we are asked for the password. ```passowrd123``` from ```document.txt``` does not work, but ```password123``` does (this may be intentional, or accidental). When we examine the worksheets closely we see the flag ```RC3-2016-SNEAKY21``` in ```Sheet2```:
+When we open the decrypted file in Excel we are asked for the password. ```passowrd123``` from ```document.txt``` does not work, but ```password123``` does (the misspelling may be accidental or intentional but that is irrelevant). When we examine the worksheets closely we see the flag ```RC3-2016-SNEAKY21``` in ```Sheet2```:
 
 ![Flag]({{ site.baseurl }}/ctfs/rc3ctf2016/dirty-birdy/flag.png)
