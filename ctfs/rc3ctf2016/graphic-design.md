@@ -11,7 +11,7 @@ title: "RC3 CTF 2016 Writeup: Graphic Design"
 >
 > -Your friendly neighborhood httpster
 
-The archive attached to this challenge - ```forensics200.zip``` - contains another file - ```forensics200.obj```. A quick look inside indicates that it is a [Blender](https://www.blender.org/) file:
+The archive attached to this challenge - ```forensics200.zip``` - contains file ```forensics200.obj```. A quick look inside indicates that it is a [Blender](https://www.blender.org/) file:
 
 ```
 # Blender v2.78 (sub 0) OBJ File: ''
