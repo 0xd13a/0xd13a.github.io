@@ -11,7 +11,7 @@ title: "RC3 CTF 2016 Writeup: Klaatu Barada N..."
 >
 > author:orkulus
 
-"Klaatu Barada Nikto", as it turns out, is a phrase from both [The Day the Earth Stood Still](http://www.imdb.com/title/tt0043456/) and [Army of Darkness](http://www.imdb.com/title/tt0106308/) (CTFs teach you all kinds of trivia :) ). 
+"Klaatu Barada Nikto", as it turns out, is a phrase from both [The Day the Earth Stood Still](http://www.imdb.com/title/tt0043456/) and [Army of Darkness](http://www.imdb.com/title/tt0106308/) (in CTFs you learn all kinds of trivia :) ). 
 
 The application that we connect to returns a bunch of base64-encoded strings and immediately disconnects. It does not seem to accept any input, so let's proceed on assumption that the flag is encoded in the output. 
 
@@ -23,7 +23,7 @@ We capture a sample output, decode and save it into a local file [nikto.txt]({{ 
 root@kali:~/rc3# cat nikto.txt | uniq | sort > nikto_table.txt
 ```
 
-Now we look at the first 8 lines in ```nikto.txt```:
+Let's analyze the first 8 lines in ```nikto.txt```:
 
 ```
 Look, maybe I didn't say every single little tiny syllable, no. But basically I said them, yeah.
