@@ -1,6 +1,6 @@
 ---
 layout: page
-title: RC3 CTF 2016 Writeup: Dirty Birdy
+title: "RC3 CTF 2016 Writeup: Dirty Birdy"
 ---
 
 > 400 points
