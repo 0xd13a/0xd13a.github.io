@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SECCON 2016 Online Writeup: Memory Analysis"
+title: "SECCON 2016 Online CTF Writeup: Memory Analysis"
 ---
 
 > Memory Analysis
