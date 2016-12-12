@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SECCON 2016 Online Writeup: VoIP"
+title: "SECCON 2016 Online CTF Writeup: VoIP"
 ---
 
 > VoIP
