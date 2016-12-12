@@ -46,7 +46,7 @@ So far so good. Stepping through we enter an arbitrary password at the password 
 
 ![IDA3]({{ site.baseurl }}/ctfs/seccon2016/anti-debugging/ida3.png)
 
-Just in case user-entered password is relied on later on, let's restart the application and supply the right password.
+Just in case user-entered password is relied on later upon, let's restart the application and supply the right password.
 
 As we step through we now get the correct password message:
 
