@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SECCON 2016 Online Writeup: Vigenere"
+title: "SECCON 2016 Online CTF Writeup: Vigenere"
 ---
 
 > Vigenere
