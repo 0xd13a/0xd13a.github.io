@@ -3,8 +3,6 @@ layout: page
 title: "SECCON 2016 Online CTF Writeup: Vigenere"
 ---
 
-> Vigenere
-> 
 > 100 points
 > 
 > ```k: ????????????```
