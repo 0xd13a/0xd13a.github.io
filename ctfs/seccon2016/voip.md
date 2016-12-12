@@ -3,8 +3,6 @@ layout: page
 title: "SECCON 2016 Online CTF Writeup: VoIP"
 ---
 
-> VoIP
->
 > 100 points
 > 
 > Extract a voice.
