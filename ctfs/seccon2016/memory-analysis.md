@@ -21,7 +21,9 @@ title: "SECCON 2016 Online CTF Writeup: Memory Analysis"
 
 The hints reveal a lot of what should be done for this challenge. The attached file is a Windows memory dump that we open in [HxD](https://mh-nexus.de/en/hxd/). 
 
-Windows hosts file (```C:\Windows\System32\drivers\etc\hosts```) usually contains a header (```# This is a sample HOSTS file```) so let's search for it. Bingo! It is found and the contents indicate that they set up a host entry for a specific IP address:
+Windows hosts file (```C:\Windows\System32\drivers\etc\hosts```) usually contains a header (```# This is a sample HOSTS file```) so let's search for it. 
+
+Bingo! We find it and the contents indicate that they set up a host entry for a specific IP address:
 
 ```
 153.127.200.178    crattack.tistory.com
