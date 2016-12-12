@@ -13,7 +13,7 @@ title: "SECCON 2016 Online Writeup: VoIP"
 >
 > voip.pcap 
 
-As usual we start by opening the PCAP file in [Wireshark](https://www.wireshark.org/). A quick Google search reveals that there is functionality in Wireshark that deals specifcally with VoIP calls - it's under ```Telephony > VoIP Calls```. Selecting the command shows us the embedded voice stream and an option to play it.
+As usual we start by opening the PCAP file in [Wireshark](https://www.wireshark.org/). A quick Google search reveals that there is functionality in Wireshark that deals specifcally with VoIP calls - it's under ```Telephony > VoIP Calls```. Selecting this command shows us the embedded voice stream and an option to play it.
 
 Let's click Play Streams:
 
