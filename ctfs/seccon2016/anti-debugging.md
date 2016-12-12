@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "SECCON 2016 Online Writeup: Anti-Debugging"
+title: "SECCON 2016 Online CTF Writeup: Anti-Debugging"
 ---
 
 > Anti-Debugging
