@@ -81,7 +81,7 @@ Key:        VIGENERxxxxxVIGENERxxxxxVIGENERxxxxxVIGENER
 Ciphertext: LMIG}RPEDOEEWKJIQIWKJWMNDTSR}TFVUFWYOCBAJBQ
 ```
 
-Now it's time to do a bit of guessing. First, the next letter in the key is likely ```E```. Substituting it gives us the letter ```A``` in the plaintext. We can see a pattern developing - an alphabet sequence with some letters sequences repeating.
+Now it's time to do a bit of guessing. First, the next letter in the key is likely ```E```. Substituting it gives us the letter ```A``` in the plaintext. We can see a pattern developing - an alphabet sequence with some letter sequences repeating.
 
 Guessing the first unknown sequence of letters in the plaintext to be some combination of ```A```'s and ```B```'s gives us the likely missing key sequence as ```CODE```:
 
