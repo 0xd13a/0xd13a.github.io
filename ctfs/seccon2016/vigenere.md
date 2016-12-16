@@ -49,7 +49,7 @@ title: "SECCON 2016 Online CTF Writeup: Vigenere"
 
 This challenge seems simple enough, so doing it by hand is a viable option.
 
-In a Vigenere cipher the key is repeated in sequence during encryption (e.g. ```KEYKEYKEYKEY```). Because each question mark in the given plain- and ciphertext, and the key is likely a placeholder for the missing letter we can conclude that the key is 12 characters long. This gives use the following data to start with:
+In a Vigenere cipher the key is repeated in sequence during encryption (e.g. ```KEYKEYKEYKEY```). Because each question mark in the given plain- and ciphertext, and the key is likely a placeholder for the missing letter we can conclude that the key is 12 characters long. This gives us the following data to start with:
 
 ```
 Plaintext:  SECCON{???????????????????????????????????}
