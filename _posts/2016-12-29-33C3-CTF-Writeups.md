@@ -8,4 +8,4 @@ draft: false
 
 I came pretty close to solving ```pdfmaker``` but just couldn't nail the working combination (and learned more than I cared to know about LaTeX in the process :) ). Here is the writeup for the challenge that I solved:
 
-**[Exfil]({{ site.baseurl }}/ctfs/33ctf/exfil)**
+**[Exfil]({{ site.baseurl }}/ctfs/33c3/exfil)**
