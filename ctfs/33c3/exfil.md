@@ -15,11 +15,15 @@ In this challenge we are given a PCAP file ```dump.pcap``` and a Python source c
 
 PCAP file contains a recorded conversation between a DNS client and a server, where DNS queries and CNAME responses seem to contain encoded messages:
 
+![exfil1]({{ site.baseurl }}/ctfs/33c3/exfil/exfil1.png)
+
 Close examination of the server code reveals that DNS queries and responses are used as transport for a remote shell session. DNS client initiates the conversation and the server responds by sending shell commands, for which the client then sends output. Commands are sent in CNAME responses to DNS queries, while the output is encoded in subdomain names in DNS queries. Pretty neat so far...
 
-Each payload is encoded in Base32 and split into 62-character chunks to account for the maximum length of the domain name, with chunks separated with periods and ending in ```.eat-sleep-pwn-repeat.de```. A typical payload would look like this:
+Each payload is encoded in Base32 and split into 62-character chunks to account for the maximum length of the domain name. The chunks are separated with periods and end in ```.eat-sleep-pwn-repeat.de```. A typical payload would look like this:
 
-```G4JQAAADAB2WSZB5GEYDAMJIMZYGK5DSPEUSAZ3JMQ6TCMBQGEUGM4DFORZHSK.JAM5ZG65LQOM6TCMBQGEUGM4DFORZHSKIK.eat-sleep-pwn-repeat.de```
+```
+G4JQAAADAB2WSZB5GEYDAMJIMZYGK5DSPEUSAZ3JMQ6TCMBQGEUGM4DFORZHSK.JAM5ZG65LQOM6TCMBQGEUGM4DFORZHSKIK.eat-sleep-pwn-repeat.de
+```
 
 Since DNS packets go over UDP, the protocol includes special handling for things like duplicate packets. To account for that the first 6 bytes in each payload contain the conversation ID, sequence number, and the acknowledgement. There is no time to develop a fully robust decoding solution, but at the very least it would be necessary to account for duplicate packets. 
 
@@ -91,15 +95,15 @@ for ts, pkt in dpkt.pcap.Reader(open('dump.pcap','r')):
                     handle(dns.qd[0].name, udp.sport)
 ```
 
-Running it (```root@kali:/33c3/exfil# python decode.py > output.bin```) gives us the (output file).
+Running it (```python decode.py > output.bin```) gives us the [output file]({{ site.baseurl }}/ctfs/33c3/exfil/output.bin).
 
 The output is a treasure trove of information:
 
-* There is a public and private key (which we promptly save in ```key.txt```)
+* There is a public and private key. We save them to local file ```key.txt```.
 * There are commands the user executed to encrypt a document
-* And there is the encrypted document itself, written to stdout and captured in the log. The document body is output between tags ```START_OF_FILE``` and ```END_OF_FILE``` (and we use a binary editor to extract its body in a local file ```secret.docx.gpg```)
+* And there is the encrypted document itself, written to stdout. The document body is output between tags ```START_OF_FILE``` and ```END_OF_FILE```. We use a binary editor (e.g. [HxD](https://mh-nexus.de/en/hxd/)) to extract its body to ```secret.docx.gpg```.
 
-Now all is left is to backtrace the user's steps from the output log and decrypt the document:
+Now all is left is to backtrack the user's steps from the output log and decrypt the document:
 
 ```
 root@kali:/33c3/exfil# gpg --import key.txt
@@ -117,7 +121,8 @@ root@kali:/33c3/exfil# gpg --decrypt --recipient team@kitctf.de --trust-model al
 gpg: encrypted with 2048-bit RSA key, ID 4C2B141BBF30A26A, created 2016-12-11
       "operator from hell <team@kitctf.de>"
 ```
-File ```secret.docx``` contains the key:
+
+The resulting file ```secret.docx``` contains the key:
 
 ```
 The secret codeword is 
