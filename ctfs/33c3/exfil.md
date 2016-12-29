@@ -27,7 +27,7 @@ G4JQAAADAB2WSZB5GEYDAMJIMZYGK5DSPEUSAZ3JMQ6TCMBQGEUGM4DFORZHSK.JAM5ZG65LQOM6TCMB
 
 Since DNS packets go over UDP, the protocol includes special handling for things like duplicate packets. To account for that the first 6 bytes in each payload contain the conversation ID, sequence number, and the acknowledgement. There is no time to develop a fully robust decoding solution, but at the very least it would be necessary to account for duplicate packets. 
 
-Based on the the information gathered so far (and much trial and error :) ) I wrote following script. It goes through all packets in PCAP file, extracts and decodes payloads, discards duplicate packets, and dumps the output to the screen:
+Based on the the information gathered so far (and much trial and error :) ) I wrote the following script. It goes through all packets in PCAP file, extracts and decodes payloads, discards duplicate packets, and dumps the output to the screen:
 
 ```python
 import base64
@@ -49,7 +49,8 @@ def decode_b32(s):
     raise ValueError('Invalid base32')
 
 def parse(name):
-    # split payload data at periods, remove the top level domain name, and decode the data
+    # split payload data at periods, remove the top 
+    # level domain name, and decode the data
     data = decode_b32(b''.join(name.split('.')[:-2]))
     (conn_id, seq, ack) = struct.unpack('<HHH', data[:6])
     return (seq, data[6:])
@@ -75,7 +76,8 @@ def handle(val, port):
             return
     sys.stdout.write(data)
 
-# main execution loop - go through all DNS packets, decode payloads and dump them to the screen
+# main execution loop - go through all DNS packets, 
+# decode payloads and dump them to the screen
 for ts, pkt in dpkt.pcap.Reader(open('dump.pcap','r')):
     eth = dpkt.ethernet.Ethernet(pkt)
     if eth.type == dpkt.ethernet.ETH_TYPE_IP:
@@ -85,7 +87,8 @@ for ts, pkt in dpkt.pcap.Reader(open('dump.pcap','r')):
             
             dns = dpkt.dns.DNS(udp.data)
 
-            # extract commands from CNAME records and output from queries
+            # extract commands from CNAME records and 
+            # output from queries
             if udp.sport == 53: 
                 for rr in dns.an:
                     if rr.type == dpkt.dns.DNS_CNAME:
