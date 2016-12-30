@@ -106,7 +106,7 @@ The output is a treasure trove of information:
 * There are commands the user executed to encrypt a document
 * And there is the encrypted document itself, written to stdout. The document body is output between tags ```START_OF_FILE``` and ```END_OF_FILE```. We use a binary editor (e.g. [HxD](https://mh-nexus.de/en/hxd/)) to extract its body to ```secret.docx.gpg```.
 
-Now all is left is to backtrack the user's steps from the output log and decrypt the document:
+Now all that is left is to backtrack the user's steps from the output log and decrypt the document:
 
 ```
 root@kali:/33c3/exfil# gpg --import key.txt
