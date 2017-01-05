@@ -27,7 +27,7 @@ G4JQAAADAB2WSZB5GEYDAMJIMZYGK5DSPEUSAZ3JMQ6TCMBQGEUGM4DFORZHSK.JAM5ZG65LQOM6TCMB
 
 Since DNS packets go over UDP, the protocol includes special handling for things like duplicate packets. To account for that the first 6 bytes in each payload contain the conversation ID, sequence number, and the acknowledgement. There is no time to develop a fully robust decoding solution, but at the very least it would be necessary to account for duplicate packets. 
 
-Based on the the information gathered so far (and much trial and error :) ) I wrote the following script. It goes through all packets in PCAP file, extracts and decodes payloads, discards duplicate packets, and dumps the output to the screen:
+Based on the the information gathered so far (and much trial and error :smile: ) I wrote the following script. It goes through all packets in PCAP file, extracts and decodes payloads, discards duplicate packets, and dumps the output to the screen:
 
 ```python
 import base64
