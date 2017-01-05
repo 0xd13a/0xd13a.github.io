@@ -65,7 +65,7 @@ Eventually we get to the following location that will cause a Divide by Zero exc
 
 ![IDA5]({{ site.baseurl }}/ctfs/seccon2016/anti-debugging/ida5.png)
 
-When we get to ```0040165D``` we seem to be taking the branch to exit. Let's go to ```00401663``` instead, especially since it references what looks like an encoded flag. ;-)
+When we get to ```0040165D``` we seem to be taking the branch to exit. Let's go to ```00401663``` instead, especially since it references what looks like an encoded flag. :wink:
 
 ![IDA6]({{ site.baseurl }}/ctfs/seccon2016/anti-debugging/ida6.png)
 
