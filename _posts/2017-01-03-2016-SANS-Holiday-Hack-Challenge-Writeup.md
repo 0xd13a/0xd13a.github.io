@@ -8,7 +8,7 @@ This Christmas I took part in [SANS Holiday Hack Challenge](https://www.holidayh
 
 I especially liked that for me the challenge achieved the [Goldilocks factor](https://en.wikipedia.org/wiki/Goldilocks_principle) - puzzles were not too easy (so that they remained challenging and interesting), and not too hard (so that you are not banging your head against the wall, frustrated).
 
-In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**. :smile:
+In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**.  :simple_smile:
 
 ## Introduction 
 
@@ -128,7 +128,7 @@ scratchy@ce7787915721:/$sudo -u itchy strings out.pcap | more
 ...
 ```
 
-The other half of the password is encoded in a binary file. But before we continue with it, let's try to guess the password. Given who [Itchy and Scratchy](https://en.wikipedia.org/wiki/The_Itchy_%26_Scratchy_Show) are there is a chance that the full password is [```santaslittlehelper```](https://en.wikipedia.org/wiki/Santa's_Little_Helper). And it turns out that it is. :)
+The other half of the password is encoded in a binary file. But before we continue with it, let's try to guess the password. Given who [Itchy and Scratchy](https://en.wikipedia.org/wiki/The_Itchy_%26_Scratchy_Show) are there is a chance that the full password is [```santaslittlehelper```](https://en.wikipedia.org/wiki/Santa's_Little_Helper). And it turns out that it is. :simple_smile:
 
 ### Workshop Terminal #1
 
@@ -178,7 +178,7 @@ key: open_sesame
 
 > Find the passphrase from the wumpus. Play fair or cheat; it's up to you.
 
-This was my first time playing Wumpus and playing a text-based quest does not sound that exciting. So let's figure out a way to cheat. :)
+This was my first time playing Wumpus and playing a text-based quest does not sound that exciting. So let's figure out a way to cheat.  :simple_smile:
 
 After reading up on Wumpus on the Web I learned that there are command line parameters that allow you to set bats and pits to zero, reduce the number of rooms to minimum, and set the number of arrows to a large number. When running with these parameters winning becomes fairly easy, and the password is revealed:
 
@@ -393,10 +393,7 @@ Content-Type: application/json
 Date: Sat, 31 Dec 2016 08:38:16 GMT
 Server: nginx/1.6.2
 
-{"date":"20161231083816","status":"OK","filename":"debug-20161231083816-0.txt",
-"request":{"date":"20161231033814-0500","freemem":158126120,
-"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile","udid":"5b23d1248ad99dd",
-"verbose":false}}
+{"date":"20161231083816","status":"OK","filename":"debug-20161231083816-0.txt","request":{"date":"20161231033814-0500","freemem":158126120,"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile","udid":"5b23d1248ad99dd","verbose":false}}
 ```
 
 Notice that there is a new parameter returned in the sample above - ```"verbose":false```. Let's modify the request, adding ```"verbose":true``` and re-send it:
@@ -409,8 +406,7 @@ Host: dev.northpolewonderland.com
 Connection: Keep-Alive
 Content-Length: 144
 
-{"date":"20161231033814-0500","freemem":158126120,"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile",
-"udid":"5b23d1248ad99dd","verbose":true}
+{"date":"20161231033814-0500","freemem":158126120,"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile","udid":"5b23d1248ad99dd","verbose":true}
 
 HTTP/1.1 200 OK
 Transfer-Encoding: chunked
@@ -419,10 +415,7 @@ Content-Type: application/json
 Date: Sat, 31 Dec 2016 08:41:47 GMT
 Server: nginx/1.6.2
 
-{"date":"20161231084147","date.len":14,"status":"OK","status.len":"2","filename":"debug-20161231084147-0.txt",
-"filename.len":26,"request":{"date":"20161231033814-0500","freemem":158126120,"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile",
-"udid":"5b23d1248ad99dd","verbose":true},"files":["debug-20161224235959-0.mp3","debug-20161231082054-0.txt",
-"debug-20161231083816-0.txt","debug-20161231083918-0.txt","debug-20161231084147-0.txt","index.php"]}
+{"date":"20161231084147","date.len":14,"status":"OK","status.len":"2","filename":"debug-20161231084147-0.txt","filename.len":26,"request":{"date":"20161231033814-0500","freemem":158126120,"debug":"com.northpolewonderland.santagram.EditProfile, EditProfile","udid":"5b23d1248ad99dd","verbose":true},"files":["debug-20161224235959-0.mp3","debug-20161231082054-0.txt","debug-20161231083816-0.txt","debug-20161231083918-0.txt","debug-20161231084147-0.txt","index.php"]}
 ```
 
 Notice that now a lot more information is returned, including the name of an MP3 file - ```debug-20161224235959-0.mp3```.
@@ -565,9 +558,7 @@ Decoding:
 root@kali:/sans# php -a
 Interactive mode enabled
 
-php > print mcrypt_decrypt(MCRYPT_ARCFOUR, 
-"\x61\x17\xa4\x95\xbf\x3d\xd7\xcd\x2e\x0d\x8b\xcb\x9f\x79\xe1\xdc", 
-pack("H*","82532b2136348aaa1fa7dd2243da1cc9fb13037c49259e5ed70768d4e9baa1c80b97fee8bca72880fc78be7cc4980953b14348637bec"), 'stream');
+php > print mcrypt_decrypt(MCRYPT_ARCFOUR, "\x61\x17\xa4\x95\xbf\x3d\xd7\xcd\x2e\x0d\x8b\xcb\x9f\x79\xe1\xdc", pack("H*","82532b2136348aaa1fa7dd2243da1cc9fb13037c49259e5ed70768d4e9baa1c80b97fee8bca72880fc78be7cc4980953b14348637bec"), 'stream');
 
 {"username":"guest","date":"2016-12-27T04:54:28+0000"}
 ```
@@ -575,9 +566,7 @@ pack("H*","82532b2136348aaa1fa7dd2243da1cc9fb13037c49259e5ed70768d4e9baa1c80b97f
 Encoding:
 
 ```
-php > print bin2hex(mcrypt_encrypt(MCRYPT_ARCFOUR, 
-"\x61\x17\xa4\x95\xbf\x3d\xd7\xcd\x2e\x0d\x8b\xcb\x9f\x79\xe1\xdc", 
-'{"username":"administrator","date":"2016-12-27T04:54:28+0000"}', 'stream'));
+php > print bin2hex(mcrypt_encrypt(MCRYPT_ARCFOUR, "\x61\x17\xa4\x95\xbf\x3d\xd7\xcd\x2e\x0d\x8b\xcb\x9f\x79\xe1\xdc", '{"username":"administrator","date":"2016-12-27T04:54:28+0000"}', 'stream'));
 
 82532b2136348aaa1fa7dd2243dc0dc1e10948231f339e5edd5770daf9eef18a4384f6e7bca04d86e573b965cc9d6548b5494d6763a30b63b71976884152
 ```
@@ -591,8 +580,7 @@ Now let's try to retrieve the saved MP3. The site allows saving of queries. We s
 We can do that in an intercepting proxy:
 
 ```
-GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d
-&query=select * from audio HTTP/1.1
+GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select * from audio HTTP/1.1
 Host: analytics.northpolewonderland.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -609,8 +597,7 @@ Next we execute the saved query using View functionality:
 Note that we now see what MP3 files are in the database. But we cannot quite get the files yet because they are blobs. So let's modify the query to Base64-encode them:
 
 ```
-GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d
-&query=select to_base64(mp3) from audio HTTP/1.1
+GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select to_base64(mp3) from audio HTTP/1.1
 Host: analytics.northpolewonderland.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -642,7 +629,7 @@ Once I collected all the files, I fired up [Audacity](http://www.audacityteam.or
 
 That was a classic case of over-thinking the solution to the problem and the lesson to be learned here is to *always* try the simple and obvious solution first, no matter how unlikely or simplistic it seems. 
 
-In the end the solution was to simply join the files according to their sequence numbers, and then speed up the audio by increasing tempo about 6 times (in Audacity this is done by going to ```Effect > Change tempo...``` and entering ```600``` in ```Percent Change``` field). Once that was done I could fairly clearly hear the phrase being said, although some individual words could still be interpreted in different ways that didn't make a whole lot of sense. What I thought I heard was ```Follow Christmas, time controls, or as I was known in chess```. 8-(
+In the end the solution was to simply join the files according to their sequence numbers, and then speed up the audio by increasing tempo about 6 times (in Audacity this is done by going to ```Effect > Change tempo...``` and entering ```600``` in ```Percent Change``` field). Once that was done I could fairly clearly hear the phrase being said, although some individual words could still be interpreted in different ways that didn't make a whole lot of sense. What I thought I heard was ```Follow Christmas, time controls, or as I was known in chess```. :worried:
 
 After listening to the recording for a while I was finally convinced that the first part was ```Father Christmas Santa Claus```. And a quick Google search brought back the actual original phrase:
 
@@ -662,7 +649,7 @@ From here on it was smooth sailing - I entered that phrase at the password termi
 
 > **To prevent Star Wars Holiday Special from being released**
 
-The end. :)
+The end. :simple_smile:
 
 *In conclusion I would like to thank the SANS team for the great job they did implementing this challenge. Looking forward to the new version next Christmas!*
 
