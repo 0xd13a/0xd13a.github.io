@@ -63,7 +63,7 @@ root@kali:~# dig any @ns-920.awsdns-51.net 1forrest1.penaltea.fsh.phishing.firew
 1forrest1.penaltea.fsh.phishing.firewall.cache.african.misc200.ctf.rc3.club. 300 IN TXT	"Welp this is a depressing their is no flag here I guess your swallow was just to slow"
 ```
 
-Son of a... :-) Ok, let's try ```european``` as the first answer. Some more questions and answers later we finally get the flag: ```RC3-2016-cyb3rxr05```
+Son of a... :angry: Ok, let's try ```european``` as the first answer. Some more questions and answers later we finally get the flag: ```RC3-2016-cyb3rxr05```
 
 ```
 root@kali:~# dig any @ns-920.awsdns-51.net time.tomorrow.pi.european.misc200.ctf.rc3.club
