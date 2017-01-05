@@ -8,7 +8,7 @@ This Christmas I took part in [SANS Holiday Hack Challenge](https://www.holidayh
 
 I especially liked that for me the challenge achieved the [Goldilocks factor](https://en.wikipedia.org/wiki/Goldilocks_principle) - puzzles were not too easy (so that they remained challenging and interesting), and not too hard (so that you are not banging your head against the wall, frustrated).
 
-In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**. :)
+In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**. :smile:
 
 ## Introduction 
 
