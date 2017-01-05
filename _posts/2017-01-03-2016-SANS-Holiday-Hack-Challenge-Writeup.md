@@ -8,7 +8,7 @@ This Christmas I took part in [SANS Holiday Hack Challenge](https://www.holidayh
 
 I especially liked that for me the challenge achieved the [Goldilocks factor](https://en.wikipedia.org/wiki/Goldilocks_principle) - puzzles were not too easy (so that they remained challenging and interesting), and not too hard (so that you are not banging your head against the wall, frustrated).
 
-In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**.  :simple_smile:
+In this writeup I will outline my solutions to the tasks in this challenge. If it is still [online](https://quest2016.holidayhackchallenge.com/) when you are reading this, and you want to try it first - **stop reading now as there will be lots of spoilers**. :smile:
 
 ## Introduction 
 
@@ -128,7 +128,7 @@ scratchy@ce7787915721:/$sudo -u itchy strings out.pcap | more
 ...
 ```
 
-The other half of the password is encoded in a binary file. But before we continue with it, let's try to guess the password. Given who [Itchy and Scratchy](https://en.wikipedia.org/wiki/The_Itchy_%26_Scratchy_Show) are there is a chance that the full password is [```santaslittlehelper```](https://en.wikipedia.org/wiki/Santa's_Little_Helper). And it turns out that it is. :simple_smile:
+The other half of the password is encoded in a binary file. But before we continue with it, let's try to guess the password. Given who [Itchy and Scratchy](https://en.wikipedia.org/wiki/The_Itchy_%26_Scratchy_Show) are there is a chance that the full password is [```santaslittlehelper```](https://en.wikipedia.org/wiki/Santa's_Little_Helper). And it turns out that it is. :smile:
 
 ### Workshop Terminal #1
 
@@ -178,7 +178,7 @@ key: open_sesame
 
 > Find the passphrase from the wumpus. Play fair or cheat; it's up to you.
 
-This was my first time playing Wumpus and playing a text-based quest does not sound that exciting. So let's figure out a way to cheat.  :simple_smile:
+This was my first time playing Wumpus and playing a text-based quest does not sound that exciting. So let's figure out a way to cheat.  :smile:
 
 After reading up on Wumpus on the Web I learned that there are command line parameters that allow you to set bats and pits to zero, reduce the number of rooms to minimum, and set the number of arrows to a large number. When running with these parameters winning becomes fairly easy, and the password is revealed:
 
@@ -649,7 +649,7 @@ From here on it was smooth sailing - I entered that phrase at the password termi
 
 > **To prevent Star Wars Holiday Special from being released**
 
-The end. :simple_smile:
+The end. :smile:
 
 *In conclusion I would like to thank the SANS team for the great job they did implementing this challenge. Looking forward to the new version next Christmas!*
 
