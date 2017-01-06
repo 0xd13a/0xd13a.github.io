@@ -19,7 +19,7 @@ html {
 
 body {
 	background: $white;
-  font: 18px/1.4 $helvetica;
+  font: 14px/1.4 $helvetica;
   color: $darkGray;
 }
 
@@ -45,22 +45,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-  font-size: 30px;
+  font-size: 24px;
   a {
     color: inherit;
   }
 }
 
 h2 {
-  font-size: 24px;
-}
-
-h3 {
   font-size: 20px;
 }
 
-h4 {
+h3 {
   font-size: 18px;
+}
+
+h4 {
+  font-size: 16px;
   color: $gray;
 }
 
@@ -123,11 +123,11 @@ img {
 // Specify the color of the selection
 ::-moz-selection {
   color: $black;
-  background: $lightGray;
+  background: $lighterGray;
 }
 ::selection {
   color: $black;
-  background: $lightGray;
+  background: $lighterGray;
 }
 
 // Nicolas Gallagher's micro clearfix hack
@@ -220,7 +220,7 @@ nav {
     float: none;
     margin-top: 9px;
     display: block;
-    font-size: 16px;
+    font-size: 12px;
   }
 
   a {
@@ -257,7 +257,7 @@ nav {
     border-left: 2px solid $gray;
     padding: 0.1em 1em;
     color: $gray;
-    font-size: 22px;
+    font-size: 14px;
     font-style: italic;
   }
 
@@ -267,7 +267,7 @@ nav {
 
   .read-more {
     text-transform: uppercase;
-    font-size: 15px;
+    font-size: 12px;
   }
 }
 
@@ -281,6 +281,26 @@ nav {
 footer {
   padding: 20px 0;
   text-align: center;
+}
+
+#main {
+  float: left;
+  width:75%;
+  overflow:hidden;
+  padding-right: 20px;
+}
+
+#sidebar {
+  float: right;
+  width:25%;
+  overflow:hidden;
+  padding: 7px 7px 7px 10px;
+  border: 1px solid #ddd;
+  /*margin: 20px 0 20px 0;*/
+}
+
+#footer {
+  clear: both;
 }
 
 // Settled on moving the import of syntax highlighting to the bottom of the CSS

