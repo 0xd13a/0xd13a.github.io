@@ -253,7 +253,7 @@ ActivateTrain  TrainHelper.txt  Train_Console
 sh-4.3$ ./ActivateTrain 
 ```
 
-Once the train is activated we travel back in time to 1978. After visiting the different halls and picking up coins we finally find and rescue Santa in DFER room adjacent to the Workshop.
+Once the train is activated we travel back in time to 1978. After visiting different halls and picking up coins we finally find and rescue Santa in DFER room adjacent to the Workshop.
 
 ![santa]({{ site.baseurl }}/images/sans2016/santa.png)
 
