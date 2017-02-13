@@ -17,7 +17,7 @@ We start by downloading the challenge code and reversing it in [Snowman](http://
 
 ### Stage 1
 
-In this stage we are dealing with a hardcoded Base64-encoded string (```TjBfbTRuX2M0bDFfYWc0aW5fWTNzdDNyZDR5Oig=```). Program asks us to enter another Base64-encoded string and will proceed to the next stage is the string is correct:
+In this stage we are dealing with a hardcoded Base64-encoded string (```TjBfbTRuX2M0bDFfYWc0aW5fWTNzdDNyZDR5Oig=```). Program asks us to enter another Base64-encoded string and will proceed to the next stage if the string is correct:
 
 ```c
     __puts("[*] -- STAGE 01 ----------", 0);
