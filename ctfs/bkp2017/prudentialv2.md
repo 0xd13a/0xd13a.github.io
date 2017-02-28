@@ -38,7 +38,7 @@ if (isset($_GET['name']) and isset($_GET['password'])) {
 ?>
 ```
 
-What it boils down to is that **string** username and passwords have to be different, but their SHA1 hashes have to be the same! That would have been impossible if not for last Thursday's [Google announcement](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
+What it boils down to is that **string values** of username and password have to be different, but their SHA1 hashes have to be the same! That would have been impossible if not for last Thursday's [Google announcement](https://security.googleblog.com/2017/02/announcing-first-sha1-collision.html).
 
 In its blog post Google refers to 2 PDF files that are different and yet have the same SHA1 hash values. Although the files are fairly big, the differences between them are small. We will take advantage of that and use the portions that are different (just 320 bytes) as the strings that we will submit as username and password. This way the strings will be different, but the hashes will be the same - just what we need.
 
