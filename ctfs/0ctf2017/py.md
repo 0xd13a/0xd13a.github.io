@@ -267,7 +267,7 @@ Disassembler gives us more useful information:
 * parameter offsets are 0-based (duh)
 * Python instructions heavily use the stack - data is pushed on it and many opcodes process the top one or two items on the stack
 * at least one opcode (```53``` - ```RETURN_VALUE```) was not obfuscated - it's the same in the code for the challenge
-* some of our guesses about names and meanings of different variables worked - ```names``` and ```varnames``` fields match corresponding challege file fields perfectly
+* some of our guesses about names and meanings of different variables worked - ```names``` and ```varnames``` fields match corresponding challenge file fields perfectly
 
 Now we will break down the challenge binary opcode stream into individual operations and try to match them to instructions in our decryption code. Looks like ```rotor``` call functionality can be matched directly (assuming we are correct about ```secret``` being the decryption key):
 
@@ -305,7 +305,7 @@ Now we will break down the challenge binary opcode stream into individual operat
 610400	LOAD_FAST	4 (secret)
 830100	CALL_FUNCTION 1
 680500	STORE_NAME	5 (rot)
-610500	LOAD_FAST	0 (rot) 
+610500	LOAD_FAST	5 (rot) 
 600200	LOAD_ATTR	2 (decrypt)
 610000	LOAD_FAST	0 (data)
 830100	CALL_FUNCTION 1
