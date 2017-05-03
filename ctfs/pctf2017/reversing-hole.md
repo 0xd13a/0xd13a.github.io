@@ -9,7 +9,7 @@ title: "PlaidCTF 2017 Writeup: Down the Reversing Hole"
 >
 > Don't forget. This is a MISC challenge. 
 >
-> [Download]({{ site.baseurl }}/ctfs/pctf2017/reversing-hole/reversing-hole.exe) 
+> [Download]({{ site.baseurl }}/ctfs/pctf2017/reversing-hole/reversing-hole.zip) 
 
 Of course I disregarded the warning about the "MISC challenge" and went whole hog into reversing the algorithm... only to discover that, based on the code I saw, bruteforcing the flag would likely take longer than the length of the CTF. :smile:
 
