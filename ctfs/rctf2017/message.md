@@ -12,7 +12,7 @@ title: "RCTF 2017 Writeup: message"
 > https://static2017.teamrois.cn/misc_745cfbae1f7e94f0a49e9f81a69d72e4/msg_bc5c27abe80477b13ec5ba03dcaf7cf0.zip
 > 
 
-We are given the following text file (split into several lines for clarity):
+We are given the following text file (originally - a single long line, split into several lines for clarity):
 
 ```
 7fffffffffffffffffffffffffffffffbffff0e10419dff07fdc3ffdaeab
