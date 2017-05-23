@@ -24,13 +24,13 @@ feed62dcffffffeadf9fb8bb0efffffff56df5db6dbf7ffffffaa0c21e19
 e3bffffe07ffffffffff9fffffffffffffffffffffffffffffffffffffff
 ```
 
-Converting it to binary file and doing a ```file``` and ```binwalk``` on it brings no useful results. However it does look like it has some repeating patterns in it. Let's convert it into a binary string representation with the following script:
+Converting it to a binary file and doing a ```file``` and ```binwalk``` on it brings no useful results. However it does look like it has some repeating patterns in it. Let's convert it into a binary string representation with the following script:
 
 ```python
 print bin(int(open("msg.txt","r").read(),16))[2:].replace("0",".").replace("1","#")
 ```
 
-The script generates series of ```.```'s and ```#```'s. Let's copy the output into ```Notepad++```, reduce the font to a minimum (press ```Ctrl+-``` repeatedly), and resize the window to see if we can spot something.
+The script generates series of ```.```'s and ```#```'s. Let's copy the output into ```Notepad++```, reduce the font to a minimum (press ```Ctrl+-``` repeatedly), and resize the window continuously to see if we can spot something.
 
 The following pattern is revealed:
 
