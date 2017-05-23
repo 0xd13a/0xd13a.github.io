@@ -177,7 +177,7 @@ root      1702  1536  0 15:55 pts/1    00:00:00 grep easy
 When we enter the PID we get the flag:
 
 ```sh
- ./easy_re_patched 
+$ ./easy_re_patched 
 
 OMG!!!! I forgot kid's id
 Ready to exit     
