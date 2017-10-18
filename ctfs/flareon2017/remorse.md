@@ -17,7 +17,7 @@ Let's assume that the write routine will eventually be used to write out the fla
 
 In the function there are several sections:
 
-- 0x548-0x572 - encrypted flag characaters are stored in memory
+- 0x548-0x572 - encrypted flag bytes are stored in memory
 
 - 0x575-0x57c - flag is decrypted
 
@@ -141,7 +141,7 @@ ROM:059F 9508          ret
 ROM:059F          ; End of function sub_536
 ``` 
 
-In this algorithm the only unknown factor is the value or ```r24```, but to save time we can bruteforce it.
+In this algorithm the only unknown factor is the value of ```r24```, but to save time we can bruteforce it.
 
 Let us rewrite the algorithm in Python:
 
