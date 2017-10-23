@@ -39,7 +39,7 @@ title: "Pwn2Win 2017 Writeup: Resistance"
 >
 >Categories: PPC-M
 
-Implementing an algorithm for solving the resistances between two arbitrary points on a circuit board seems like a complex problem to solve in a short period of time. Luckily, [someone already solved it](https://gist.github.com/aelguindy/1747940) (and in Python too!) :smile: The only thing that is left is to add scaffolding that parses the inputs, and collects and returns the answers:
+Implementing an algorithm for calculating resistances between two arbitrary points on a circuit board seems like a complex problem to solve in a short period of time. Luckily, [someone already solved it](https://gist.github.com/aelguindy/1747940) (and in Python too!) :smile: The only thing that is left is to add scaffolding that parses the inputs, and collects and returns the answers:
 
 ```python
 # portion of the code "borrowed" from https://gist.github.com/aelguindy/1747940
