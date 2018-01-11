@@ -963,7 +963,7 @@ Let's submit an XML that references this DTD:
 </Elf>
 ```
 
-The vulnerable XML parser will down our evil DTD and, in turn, exfiltrate file c:\greatbook.txt to the external server. The file contents turn out to be the full address of the Page 6 of the Great Book:
+The vulnerable XML parser will download our evil DTD and, in turn, exfiltrate file c:\greatbook.txt to the external server. The file contents turn out to be the full address of the Page 6 of the Great Book:
 
 ```
 http://eaas.northpolechristmastown.com/xMk7H1NypzAqYoKw/greatbook6.pdf
