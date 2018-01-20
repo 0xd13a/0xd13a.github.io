@@ -1,5 +1,5 @@
 
-.highlight {
+pre.highlight {
   background-color: #efefef;
   padding: 7px 7px 7px 10px;
   border: 1px solid #ddd;
@@ -8,6 +8,18 @@
   box-shadow: 3px 3px rgba(0,0,0,0.1);
   margin: 20px 0 20px 0;
   overflow: auto;
+}
+
+.rouge-table, .rouge-gutter, .rouge-code {
+  border-top-style: none;
+  border-bottom-style: none;
+  border-left-style: none;
+  border-right-style: none; 
+}
+
+.lineno {
+	color: lightgrey;
+	padding-right: 10px;
 }
 
 code {
