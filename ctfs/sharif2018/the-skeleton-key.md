@@ -9,7 +9,7 @@ title: "Sharif CTF 2018 Writeup: The Skeleton Key"
 > 
 > Find the flag :)
 >
-> [Download]({{ site.baseurl }}/ctfs/sharif2018/the-skeleton-key/The Skeleton Key.apk)
+> [Download]({{ site.baseurl }}/ctfs/sharif2018/the-skeleton-key/The Skeleton Key.zip)
 
 Let's open the APK with the following set of commands:
 

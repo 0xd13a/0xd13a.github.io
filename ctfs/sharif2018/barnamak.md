@@ -9,7 +9,7 @@ title: "Sharif CTF 2018 Writeup: Barnamak"
 > 
 > Run the application and capture the flag!
 >
-> [Download]({{ site.baseurl }}/ctfs/sharif2018/barnamak/Find_Flag.apk)
+> [Download]({{ site.baseurl }}/ctfs/sharif2018/barnamak/Find_Flag.zip)
 
 The Android application contains the hidden flag. We crack it open and reverse to Java with the following commands:
 
