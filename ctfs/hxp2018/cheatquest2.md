@@ -106,7 +106,7 @@ while len(data) > 0:
 							# take 16-bit value
 							p = ord(i_data[pos*2]) * 0x100 + ord(i_data[pos*2+1])
 							
-							# decode 32-bit value into RGB (https://stackoverflow.com/a/38557870)
+							# decode 16-bit value into RGB (https://stackoverflow.com/a/38557870)
 							pixels[i1*32+i2,j] = ((p & 0xF800) >> 11,(p & 0x07E0) >> 5,p & 0x001F)
 				
 				img.save('%d.png' % (image_no))
