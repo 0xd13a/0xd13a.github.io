@@ -29,7 +29,7 @@ title: "ASIS CTF Finals 2019 Writeup: Snake"
 >
 > Birth: -
 > 
-> Download: [venomous_snake.txz]({{ site.baseurl }}/ctfs/asis2019/snakes/venomous_snake.txz)
+> Download: [venomous_snake.txz]({{ site.baseurl }}/ctfs/asis2019/snake/venomous_snake.txz)
 
 This is another reversing challenge, but decoding of the flag requires a lot of dynamic operations, so we will use Ghidra together with GDB or EDB.
 
